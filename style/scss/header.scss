@@ -1,0 +1,233 @@
+$wrapper_width: 1600px;
+$main_color: #18216D;
+
+%transition {
+    transition-duration: .15s;
+    transition-timing-function: linear;
+}
+
+%underline {
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0%;
+        height: 1.5px;
+        background-color: $main_color;
+
+        @extend %transition;
+    }
+
+    &:hover::after {
+        width: 100%;
+    }
+}
+
+
+.header {
+    padding: 25px 0;
+    background-color: #FFFFFF;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+
+    $side_padding: 100px / 1600px * 100%;
+    $side_padding_responsive: 28px;
+    $menu_width_sample: 507px;
+    $left_width_sample: 114px + 110px + $menu_width_sample;
+    $right_width_sample: 239px;
+    $left_width: $left_width_sample / ($wrapper_width - ($side_padding / 100% * 1600px) * 2) * 100%;
+    $right_width: $right_width_sample / ($wrapper_width - ($side_padding / 100% * 1600px) * 2) * 100%;
+
+
+    &__wrapper {
+        padding: 0 $side_padding;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        // @media (max-width: 600px) {
+        //     padding: 0 $side_padding_responsive;
+        // }
+    }
+    
+    &__left {
+        width: $left_width;
+        min-width: 560px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 100;
+
+        @media (max-width: 970px) {
+            width: 100%;
+            min-width: 170px;
+        }
+    }
+
+    &__burger {
+        display: none;
+
+        @media (max-width: 970px) {
+            display: block;
+            position: relative;
+            width: 28px;
+            // height: 12.2px / 20px * 100%;
+            height: 12.2px;
+        }
+
+        &::before, &::after {
+            content: "";
+            position: absolute;
+            background-color: #273551;
+            right: 0;
+            @extend %transition;
+        }
+
+        &::before {
+            top: 0;
+            width: 100%;
+            height: 3px;
+        }
+
+        &::after {
+            bottom: 0;
+            width: 20px / 28px * 100%;
+            height: 2px;
+        }
+
+        &.active {
+            &::before {
+                top: 45%;
+                width: 100%;
+                height: 2px;
+                transform: rotate(-45deg);
+            }
+    
+            &::after {
+                bottom: 45%;
+                width: 100%;
+                height: 2px;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    &__menu {
+        width: $menu_width_sample / $left_width_sample * 100%;
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: 970px) {
+            display: none;
+        }
+
+        &__item {
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+            color: $main_color;
+            position: relative;
+
+            @extend %underline;
+        }
+    }
+
+    &__right {
+        width: $right_width;
+        min-width: 210px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: 970px) {
+            display: none;
+        }
+    }
+
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 114px;
+
+    &__img {
+        width: 32px;
+        height: 32px;
+    }
+
+    &__text {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 20px;
+        color: $main_color;
+        margin-left: 7px;
+    }
+}
+
+.sing_in {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    color: $main_color;
+}
+
+.download {
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 20px;
+    color: #FFFFFF;
+    width: 136px;
+    height: 52px;
+    box-sizing: border-box;
+    background: $main_color;
+    border-radius: 6px;
+    border: 1px solid $main_color;
+
+    @extend %transition;
+
+    &:active {
+        color: $main_color;
+        background-color: #FFFFFF;
+    }
+}
+
+.burger {
+    &__block {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        height: 100%;
+        min-height: 480px;
+        background-color: #FFFFFF;
+        z-index: 50;
+        @extend %transition;
+
+        @media (max-width: 970px) {
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+
+        &.active {
+            left: 0;
+        }
+    }
+
+    &__menu {
+        height: 58%;
+        max-height: 550px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
