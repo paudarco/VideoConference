@@ -322,8 +322,19 @@ body {
   }
 }
 
+.intro, .partners, .features {
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
 .intro {
   padding-top: 126px;
+}
+
+@media (max-width: 970px) {
+  .intro {
+    padding-top: 80px;
+  }
 }
 
 @media (max-width: 630px) {
@@ -919,6 +930,12 @@ body {
 }
 
 .hide {
-  margin-right: 100px;
+  margin-left: 100px;
   opacity: 0;
+}
+
+@media (max-width: 475px) {
+  .hide {
+    margin-left: 10px;
+  }
 }

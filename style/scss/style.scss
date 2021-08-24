@@ -35,10 +35,18 @@ $main_side_padding: $main_side_padding_sample / $wrapper_width * 100%;
     }
 }
 
+.intro, .partners, .features {
+    transition: 2s;
+}
+
 
 
 .intro {
     padding-top: 126px;
+
+    @media (max-width: 970px) {
+        padding-top: 80px;
+    }
 
     @media (max-width: $mobile_width) {
         padding-top: 52px;
@@ -550,6 +558,11 @@ $main_side_padding: $main_side_padding_sample / $wrapper_width * 100%;
 
 
 .hide {
-    margin-right: 100px;
+    margin-left: 100px;
     opacity: 0;
+
+
+    @media (max-width: 475px) {
+        margin-left: 10px;
+    }
 }
