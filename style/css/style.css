@@ -322,7 +322,7 @@ body {
   }
 }
 
-.intro, .partners, .features {
+.intro, .partners, .features, .features__block {
   -webkit-transition: 2s;
   transition: 2s;
 }
@@ -748,6 +748,12 @@ body {
 
 .features {
   padding-bottom: 100px;
+}
+
+@media (max-width: 630px) {
+  .features {
+    padding-bottom: 20px;
+  }
 }
 
 .features__wrapper {
