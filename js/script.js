@@ -4,13 +4,13 @@ const intro = document.querySelector('.intro'),
       featuresItems = features.querySelectorAll('.features__block');
 
 function showSection(section) {
-    if (window.pageYOffset >= section.offsetTop - 450) {
+    if (window.pageYOffset >= section.offsetTop - 580) {
         section.classList.remove('hide');
     }
 }
 
 function removeEvent(section, funcName) {
-    if (window.pageYOffset >= section.offsetTop - 449) {
+    if (window.pageYOffset >= section.offsetTop - 579) {
         window.removeEventListener('scroll', funcName);
     }
 }
