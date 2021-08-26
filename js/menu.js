@@ -21,6 +21,6 @@ burger.addEventListener('click', () => {
 });
 
 menuItems.forEach(item => {
-    item.addEventListener('click', () => hideMenu())
+    item.addEventListener('click', () => hideMenu());
 });
 
