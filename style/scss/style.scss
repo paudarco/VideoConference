@@ -1,5 +1,9 @@
 @import "header.scss";
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     width: 100%;
     font-family: Inter;
@@ -208,11 +212,11 @@ $main_side_padding: $main_side_padding_sample / $wrapper_width * 100%;
 
 .partners {
     padding-top: 121.89px;
-    padding-bottom: 130px;
+    // padding-bottom: 130px;
 
     @media (max-width: $mobile_width) {
         padding-top: 41px;
-        padding-bottom: 50px;
+        // padding-bottom: 50px;
     }
 
     &__wrapper {
@@ -397,9 +401,11 @@ $main_side_padding: $main_side_padding_sample / $wrapper_width * 100%;
 
 
 .features {
+    padding-top: 130px;
     padding-bottom: 100px;
 
     @media (max-width: $mobile_width) {
+        padding-top: 50px;
         padding-bottom: 20px;
     }
     
